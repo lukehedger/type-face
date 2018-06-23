@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "name": "type-face",
+  "version": "1.0.0",
+  "description": "Type-safety in JavaScript GraphQL applications",
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "types": "gql-gen --schema http://localhost:4000 --template typescript --out app/index.d.ts app/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukehedger/type-face.git"
+  },
+  "author": "Luke Hedger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukehedger/type-face/issues"
+  },
+  "homepage": "https://github.com/lukehedger/type-face#readme",
+  "dependencies": {
+    "graphql": "^0.13.2",
+    "graphql-request": "^1.6.0",
+    "graphql-tag": "^2.9.2",
+    "typescript": "^2.9.2"
+  },
+  "devDependencies": {
+    "graphql-code-generator": "^0.9.3",
+    "graphql-codegen-typescript-template": "^0.9.3",
+    "html-webpack-plugin": "^3.2.0",
+    "ts-loader": "^4.4.1",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
