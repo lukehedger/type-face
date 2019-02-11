@@ -17,6 +17,6 @@ interface IHello {
 }
 
 // TODO: Type variables
-client.request(print(query), { name: 2}).then((data: IHello) => {
+client.request(print(query), {name: 2}).then((data: IHello) => {
   el_hello.innerHTML = data.hello
 })

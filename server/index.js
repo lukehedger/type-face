@@ -1,16 +1,28 @@
-const { GraphQLServer } = require('graphql-yoga')
+const { GraphQLServer } = require("graphql-yoga");
+const { queryType, makeSchema, stringArg } = require("nexus");
 
-const Query = require('./query')
-const schema = require('./schema')
+const Query = queryType({
+  definition(t) {
+    t.string("hello", {
+      // TODO: Can default `World` be provided in options?
+      args: { name: stringArg({ nullable: true }) },
+      resolve: (parent, { name }) => `Hello ${name || "World"}!`
+    });
+  }
+});
 
-const typeDefs = schema
+const schema = makeSchema({
+  types: [Query],
+  outputs: {
+    schema: __dirname + "/generated/schema.graphql",
+    typegen: __dirname + "/generated/typings.ts"
+  }
+});
 
-const resolvers = {
-  Query: Query,
-}
-
-const server = new GraphQLServer({ typeDefs, resolvers })
+const server = new GraphQLServer({
+  schema
+});
 
 server.start(() => {
-  console.log('GraphQL server running on http://localhost:4000')
-})
+  console.log("GraphQL server running on http://localhost:4000");
+});
