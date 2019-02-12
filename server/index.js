@@ -1,26 +1,27 @@
 const { GraphQLServer } = require("graphql-yoga");
 const { queryType, makeSchema, stringArg } = require("nexus");
+const path = require("path");
 
 const Query = queryType({
   definition(t) {
     t.string("hello", {
-      // TODO: Can default `World` be provided in options?
-      args: { name: stringArg({ nullable: true }) },
-      resolve: (parent, { name }) => `Hello ${name || "World"}!`
+      args: { name: stringArg({ nullable: true, default: "World" }) },
+      resolve: (parent, { name }) => `Hello ${name}!`,
     });
-  }
+  },
 });
 
 const schema = makeSchema({
   types: [Query],
   outputs: {
     schema: __dirname + "/generated/schema.graphql",
-    typegen: __dirname + "/generated/typings.ts"
-  }
+    typegen: __dirname + "/generated/typings.ts",
+  },
+  prettierConfig: path.resolve(__dirname, "../.prettierrc"),
 });
 
 const server = new GraphQLServer({
-  schema
+  schema,
 });
 
 server.start(() => {
