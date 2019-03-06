@@ -3,26 +3,21 @@
   "name": "type-face",
   "version": "1.0.0",
   "description": "Type-safety in JavaScript GraphQL applications",
-  "scripts": {
-    "start": "nodemon --watch server server"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lukehedger/type-face.git"
   },
   "author": "Luke Hedger",
-  "license": "MIT",
+  "license": "Unlicense",
   "bugs": {
     "url": "https://github.com/lukehedger/type-face/issues"
   },
   "homepage": "https://github.com/lukehedger/type-face#readme",
-  "dependencies": {
-    "graphql": "14.1.1",
-    "graphql-yoga": "1.17.4",
-    "nexus": "0.9.11"
+  "scripts": {
+    "start": "yarn workspaces run start",
+    "build": "yarn workspaces run build"
   },
-  "devDependencies": {
-    "nodemon": "^1.17.5",
-    "prettier": "^1.16.4"
-  }
+  "workspaces": [
+    "examples/*"
+  ]
 }

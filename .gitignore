@@ -17,4 +17,11 @@ Thumbs.db
 ######################
 node_modules/
 
-**/public/
+# Build #
+######################
+pkg/
+
+# Reason #
+######################
+**/reason/lib/
+.merlin
