@@ -6,12 +6,19 @@
   "private": true,
   "scripts": {
     "start": "node pkg/dist-node/index.js",
-    "build": "pack build"
+    "build": "eslint src && pack build"
   },
   "devDependencies": {
     "@pika/pack": "0.3.4",
     "@pika/plugin-build-node": "0.3.14",
-    "@pika/plugin-standard-pkg": "0.3.14"
+    "@pika/plugin-standard-pkg": "0.3.14",
+    "babel-eslint": "10.0.1",
+    "eslint": "5.15.1",
+    "eslint-plugin-graphql": "3.0.3",
+    "graphql": "14.1.1"
+  },
+  "dependencies": {
+    "node-fetch": "2.3.0"
   },
   "@pika/pack": {
     "pipeline": [
