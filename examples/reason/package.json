@@ -1,0 +1,27 @@
+{
+  "name": "reason",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node pkg/dist-node/index.js",
+    "build": "pack build"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-source-bucklescript"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ]
+    ]
+  },
+  "devDependencies": {
+    "@pika/pack": "0.3.4",
+    "@pika/plugin-build-node": "0.3.14",
+    "@pika/plugin-source-bucklescript": "0.3.14",
+    "bs-platform": "4.0.18"
+  }
+}

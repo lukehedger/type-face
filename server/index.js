@@ -17,7 +17,6 @@ const schema = makeSchema({
     schema: __dirname + "/generated/schema.graphql",
     typegen: __dirname + "/generated/typings.ts",
   },
-  prettierConfig: path.resolve(__dirname, "../.prettierrc"),
 });
 
 const server = new GraphQLServer({
