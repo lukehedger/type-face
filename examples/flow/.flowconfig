@@ -1,0 +1,13 @@
+[ignore]
+./pkg
+
+[include]
+./src
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]

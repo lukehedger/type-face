@@ -6,7 +6,7 @@ Experimenting with type-safety in JavaScript GraphQL applications.
 | Language | Invalid use of response | Invalid argument key | Invalid argument value | Invalid operation name |
 | :--- | :--- | :--- | :--- | :--- |
 | JavaScript | Runtime | Build | Build | Build |
-| Flow | - | - | - | - |
+| Flow | Build | Runtime | Runtime | Runtime |
 | TypeScript | - | - | - | - |
 | Reason | - | - | - | - |
 

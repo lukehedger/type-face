@@ -6,12 +6,17 @@
   "private": true,
   "scripts": {
     "start": "node pkg/dist-node/index.js",
-    "build": "pack build"
+    "build": "flow check && pack build"
   },
   "devDependencies": {
+    "@babel/preset-flow": "7.0.0",
     "@pika/pack": "0.3.4",
     "@pika/plugin-build-node": "0.3.14",
-    "@pika/plugin-standard-pkg": "0.3.14"
+    "@pika/plugin-standard-pkg": "0.3.14",
+    "flow-bin": "0.94.0"
+  },
+  "dependencies": {
+    "node-fetch": "2.3.0"
   },
   "@pika/pack": {
     "pipeline": [
