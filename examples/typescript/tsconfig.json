@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
-    "sourceMap": true
-  }
+    "target": "es2019",
+    "module": "esnext",
+    "sourceMap": true,
+    "strict": true
+  },
+  "include": ["src/index.ts"],
+  "exclude": ["node_modules", "**/__tests__/*"]
 }
