@@ -16,7 +16,7 @@
     "flow-bin": "0.94.0"
   },
   "dependencies": {
-    "node-fetch": "2.3.0"
+    "node-fetch": "2.6.1"
   },
   "@pika/pack": {
     "pipeline": [
